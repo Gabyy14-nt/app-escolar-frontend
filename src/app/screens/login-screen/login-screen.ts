@@ -1,55 +1,35 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SHARED_IMPORTS } from '../../shared/shared.imports';
-// import { CookieService } from 'ngx-cookie-service';
-// import { NgxMaskDirective } from 'ngx-mask';
-import { NgClass } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-// import { Router } from 'express'; 
+import { Router } from 'express';
 
 @Component({
   selector: 'app-login-screen',
-  imports: [
-    ...SHARED_IMPORTS,
-    // NgxMaskDirective,
-    NgClass,
-    FormsModule
-],
+  imports: [...SHARED_IMPORTS],
   templateUrl: './login-screen.html',
   styleUrl: './login-screen.scss',
 })
-
 export class LoginScreen implements OnInit {
-
-  // Se definen las variables globales que se utilizarán en el componente
+  //Se definen las variables globales que se utilizarán en el componente
   public username: string = '';
   public password: string = '';
   public load: boolean = false;
   public errors: any = {};
-  public typeInput: string = 'password';
 
-  // private cookies = inject(CookieService);
+  // Tipo de campo para la contraseña
+  public typeInput: 'password' | 'text' = 'password';
 
-  constructor() {
-    // this.cookies.set('sesion', 'valor');
-    // const valor = this.cookies.get('sesion');
+  constructor() {}
+
+  ngOnInit(): void {}
+
+  public login() {}
+
+  // Función para mostrar y ocultar la contraseña
+  showPassword(): void {
+    this.typeInput = this.typeInput === 'password' ? 'text' : 'password';
   }
 
-  ngOnInit(): void {
+  public registrar() {}
 
-  }
-  public login(){
-
-  }
-  public showPassword(){
-
-  }
-  public registrar(){
-
-  }
-  public olvideContrasena(){
-
-  }
-
+  public olvideContrasena() {}
 }
-
-

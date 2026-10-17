@@ -1,4 +1,4 @@
-// MOdulos
+// Módulos para formularios y directivas de Angular que se importan en los componentes standalone de la aplicación.
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgOptimizedImage } from '@angular/common';
